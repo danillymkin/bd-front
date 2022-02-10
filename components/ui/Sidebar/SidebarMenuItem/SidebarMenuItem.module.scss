@@ -1,0 +1,11 @@
+.item {
+  @apply w-full hover:bg-gray-white rounded-xl transition duration-300
+}
+
+.link {
+  @apply inline-flex items-center py-5 text-gray-black hover:text-purple text-sm font-semibold w-full inline-block pl-7 transition duration-300
+}
+
+.name {
+  @apply ml-7
+}
