@@ -47,3 +47,5 @@ export const Sidebar: FunctionComponent = (): JSX.Element => {
     </aside>
   );
 };
+
+export default Sidebar;
