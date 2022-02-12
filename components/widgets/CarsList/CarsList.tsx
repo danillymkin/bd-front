@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
 import classes from './CarsList.module.scss';
-import CarsListItem from '../../ui/CarsList/CarsListItem/CarsListItem';
+import CarsListItem from '../../ui/CarsListItem/CarsListItem';
 import { Car } from '../../../services/car/models/car';
 
 interface CarsListProps {
