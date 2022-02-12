@@ -3,6 +3,7 @@ import React, { FunctionComponent } from 'react';
 import car from '../../../public/car.jpg';
 import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
 import CarsList from '../../widgets/CarsList/CarsList';
+import Pagination from '../../widgets/Pagination/Pagination';
 import { Car } from '../../../services/car/models/car';
 
 const cars: Car[] = [
@@ -64,6 +65,8 @@ const CarsScreen: FunctionComponent = (): JSX.Element => {
   return (
     <DashboardLayout pageTitle="Автомобили">
       <CarsList cars={cars} />
+
+      <Pagination total={80} pageSize={10} currentPage={4} className="mt-14" />
     </DashboardLayout>
   );
 };
