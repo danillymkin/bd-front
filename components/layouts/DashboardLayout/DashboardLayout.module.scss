@@ -1,5 +1,5 @@
 .layout {
-  @apply flex flex-row min-h-screen
+  @apply flex flex-row h-screen
 }
 
 .main {
@@ -7,5 +7,5 @@
 }
 
 .content {
-  @apply flex flex-col flex-1 py-7 px-10
+  @apply flex flex-col flex-1 py-7 px-14 overflow-y-auto
 }
