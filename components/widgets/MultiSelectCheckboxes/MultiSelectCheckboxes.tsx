@@ -26,7 +26,12 @@ const MultiSelectCheckboxes: FunctionComponent<Props> = ({
     <>
       {options.map(({ label, value }) => {
         return (
-          <FilterCheck key={value} value={value} onChange={onChangeCheckbox}>
+          <FilterCheck
+            key={value}
+            value={value}
+            checked={values.includes(value)}
+            onChange={onChangeCheckbox}
+          >
             {label}
           </FilterCheck>
         );

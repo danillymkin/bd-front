@@ -8,6 +8,7 @@ import { useUpdateEffect } from 'usehooks-ts';
 interface FilterCheckProps {
   value: string;
   onChange: (value: string, checked: boolean) => void;
+  checked: boolean;
 }
 
 type Props = FilterCheckProps;
@@ -17,17 +18,18 @@ const cx = classNames.bind(classes);
 const FilterCheck: FunctionComponent<Props> = ({
   value,
   onChange,
+  checked,
   children,
 }): JSX.Element => {
-  const [checked, setChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(checked);
 
   const onChecked = () => {
-    setChecked(!checked);
+    setIsChecked(!isChecked);
   };
 
   useUpdateEffect(() => {
-    onChange(value, checked);
-  }, [checked]);
+    onChange(value, isChecked);
+  }, [isChecked]);
 
   return (
     <div onClick={onChecked} className={classes.filterCheck}>
