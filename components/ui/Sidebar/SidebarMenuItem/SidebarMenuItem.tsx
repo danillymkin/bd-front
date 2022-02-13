@@ -3,20 +3,29 @@ import Link from 'next/link';
 
 import classes from './SidebarMenuItem.module.scss';
 import { SidebarMenuItemType } from './SidebarMenuItemType';
+import classNames from 'classnames/bind';
 
 interface SidebarMenuItemProps {
   item: SidebarMenuItemType;
+  active: string;
 }
 
 type Props = SidebarMenuItemProps;
 
-const SidebarMenuItem: FunctionComponent<Props> = ({ item }): JSX.Element => {
+const cx = classNames.bind(classes);
+
+const SidebarMenuItem: FunctionComponent<Props> = ({
+  item,
+  active,
+}): JSX.Element => {
   const { name, to, icon } = item;
 
+  const isActive = to === active;
+
   return (
-    <li className={classes.item}>
+    <li className={cx({ item: true, activeItem: isActive })}>
       <Link href={to}>
-        <a className={classes.link}>
+        <a className={cx({ link: true, activeLink: isActive })}>
           {icon}
           <span className={classes.name}>{name}</span>
         </a>

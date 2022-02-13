@@ -6,6 +6,7 @@ import { SidebarMenuItemType } from '../SidebarMenuItem/SidebarMenuItemType';
 import { SidebarMenuSectionType } from './SidebarMenuSectionType';
 
 interface SidebarMenuSectionProps {
+  active: string;
   section: SidebarMenuSectionType;
 }
 
@@ -13,6 +14,7 @@ type Props = SidebarMenuSectionProps;
 
 export const SidebarMenuSection: FunctionComponent<Props> = ({
   section,
+  active,
 }): JSX.Element => {
   const { name, items } = section;
 
@@ -22,7 +24,7 @@ export const SidebarMenuSection: FunctionComponent<Props> = ({
 
       <ul className={classes.list}>
         {items.map((item: SidebarMenuItemType) => (
-          <SidebarMenuItem key={item.name} item={item} />
+          <SidebarMenuItem key={item.name} item={item} active={active} />
         ))}
       </ul>
     </li>
