@@ -69,17 +69,17 @@ const Pagination: FunctionComponent<Props> = ({
         </Button>
       </li>
 
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber: number, index: number) => {
         if (pageNumber === DOTS) {
           return (
-            <li key={pageNumber} className={classes.dots}>
+            <li key={index} className={classes.dots}>
               &#8230;
             </li>
           );
         }
 
         return (
-          <li key={pageNumber} onClick={() => onItem(pageNumber)}>
+          <li key={index} onClick={() => onItem(pageNumber)}>
             <Button
               type={'pagination'}
               className={cx({
