@@ -7,6 +7,7 @@ import CarManufacturer from '../CarManufacturer/CarManufacturer';
 import CarSpecificationsLine from '../CarSpecificationsLine/CarSpecificationsLine';
 import CarPrice from '../CarPrice/CarPrice';
 import { Car } from '../../../services/car/models/car';
+import { mileageFormatter } from '../../../helpers/mileageFormatter';
 
 interface CarsListItemProps {
   car: Car;
@@ -26,7 +27,7 @@ const CarsListItem: FunctionComponent<Props> = ({ car }): JSX.Element => {
     manufacturer,
   } = car;
   const specifications: string[] = [
-    `${mileage} км`,
+    `${mileageFormatter.format(mileage)} км`,
     color,
     drive,
     transmission,
