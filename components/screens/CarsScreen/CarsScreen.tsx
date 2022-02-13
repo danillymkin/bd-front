@@ -1,10 +1,12 @@
 import React, { FunctionComponent } from 'react';
 
+import classes from './CarsScreen.module.scss';
 import car from '../../../public/car.jpg';
 import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
 import CarsList from '../../widgets/CarsList/CarsList';
 import Pagination from '../../widgets/Pagination/Pagination';
 import { Car } from '../../../services/car/models/car';
+import Filter from '../../widgets/Filter/Filter';
 
 const cars: Car[] = [
   {
@@ -59,14 +61,77 @@ const cars: Car[] = [
       bic: '044525974',
     },
   },
+  {
+    id: 3,
+    name: 'Subaru Forester Premium Plus',
+    image: car,
+    price: 6_700_000,
+    releaseYear: 2018,
+    description: 'Описание автомобиля',
+    body: 'Седан',
+    color: 'Белый',
+    drive: 'Задний',
+    fuel: 'Бензин',
+    mileage: 12000,
+    power: 249,
+    tax: 18000,
+    transmission: 'Автоматическая',
+    volume: 2.0,
+    manufacturer: {
+      id: 1,
+      name: 'Subaru',
+      address: 'Москва, Ленинградское шоссе, 39а ст1',
+      director: 'Иванов В. В.',
+      accountant: 'Иванов В. В.',
+      account: '40817810099910004312',
+      bic: '044525974',
+    },
+  },
+  {
+    id: 4,
+    name: 'Subaru Forester Premium Plus',
+    image: car,
+    price: 6_700_000,
+    releaseYear: 2018,
+    description: 'Описание автомобиля',
+    body: 'Седан',
+    color: 'Белый',
+    drive: 'Задний',
+    fuel: 'Бензин',
+    mileage: 12000,
+    power: 249,
+    tax: 18000,
+    transmission: 'Автоматическая',
+    volume: 2.0,
+    manufacturer: {
+      id: 1,
+      name: 'Subaru',
+      address: 'Москва, Ленинградское шоссе, 39а ст1',
+      director: 'Иванов В. В.',
+      accountant: 'Иванов В. В.',
+      account: '40817810099910004312',
+      bic: '044525974',
+    },
+  },
 ];
 
 const CarsScreen: FunctionComponent = (): JSX.Element => {
   return (
     <DashboardLayout pageTitle="Автомобили">
-      <CarsList cars={cars} />
+      <div className={classes.layout}>
+        <div className={classes.content}>
+          <CarsList cars={cars} />
 
-      <Pagination total={80} pageSize={10} currentPage={4} className="mt-14" />
+          <Pagination
+            total={80}
+            pageSize={10}
+            currentPage={4}
+            className="mt-14"
+          />
+        </div>
+
+        <Filter />
+      </div>
     </DashboardLayout>
   );
 };
