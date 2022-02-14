@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import classes from './CarsListItem.module.scss';
 import logo from '../../../public/subaru.png';
+import carImg from '../../../public/car.jpg';
 import CarManufacturer from '../CarManufacturer/CarManufacturer';
 import CarSpecificationsLine from '../CarSpecificationsLine/CarSpecificationsLine';
 import CarPrice from '../CarPrice/CarPrice';
@@ -16,16 +17,8 @@ interface CarsListItemProps {
 type Props = CarsListItemProps;
 
 const CarsListItem: FunctionComponent<Props> = ({ car }): JSX.Element => {
-  const {
-    name,
-    price,
-    image,
-    color,
-    drive,
-    mileage,
-    transmission,
-    manufacturer,
-  } = car;
+  const { name, price, color, drive, mileage, transmission, manufacturer } =
+    car;
   const specifications: string[] = [
     `${mileageFormatter.format(mileage)} км`,
     color,
@@ -36,7 +29,7 @@ const CarsListItem: FunctionComponent<Props> = ({ car }): JSX.Element => {
   return (
     <div className={classes.car}>
       <div className={classes.image}>
-        <Image src={image} layout="responsive" alt="car" />
+        <Image src={carImg} layout="responsive" alt="car" />
       </div>
 
       <div className={classes.details}>
