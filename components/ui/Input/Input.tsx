@@ -12,6 +12,9 @@ interface InputProps {
   type: HTMLInputTypeAttribute;
   value: string;
   onChange: (value: string) => void;
+  min?: number;
+  max?: number;
+  placeholder?: string;
 }
 
 type Props = InputProps;
@@ -20,6 +23,9 @@ const Input: FunctionComponent<Props> = ({
   type,
   value,
   onChange,
+  min,
+  max,
+  placeholder,
 }): JSX.Element => {
   const [inputValue, setInputValue] = useState(value);
 
@@ -35,6 +41,9 @@ const Input: FunctionComponent<Props> = ({
     <input
       type={type}
       value={inputValue}
+      min={min}
+      max={max}
+      placeholder={placeholder}
       onChange={onInputChange}
       className={classes.input}
     />
