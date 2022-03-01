@@ -8,9 +8,9 @@ import {
 } from 'react-icons/fa';
 
 import classes from './Sidebar.module.scss';
-import { SidebarMenuType } from '../../ui/SidebarMenu/SidebarMenuType';
-import SidebarMenu from '../../ui/SidebarMenu/SidebarMenu';
-import SidebarHeader from '../../ui/SidebarHeader/SidebarHeader';
+import { SidebarMenuType } from '../../ui/Sidebar/SidebarMenu/SidebarMenuType';
+import SidebarMenu from '../../ui/Sidebar/SidebarMenu/SidebarMenu';
+import SidebarHeader from '../../ui/Sidebar/SidebarHeader/SidebarHeader';
 import {
   CARS_ROUTE,
   CONTRACT_ROUTE,
