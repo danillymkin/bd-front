@@ -1,22 +1,22 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent } from 'react';
 import { FaFilter } from 'react-icons/fa';
 
 import classes from './Filter.module.scss';
+import Button from '../../ui/Button/Button';
 import FilterItem from '../../ui/FilterItem/FilterItem';
-import { useUpdateEffect } from 'usehooks-ts';
-import MultiSelectCheckboxes from '../MultiSelectCheckboxes/MultiSelectCheckboxes';
+import FilterBrand from '../../ui/Filter/FilterBrand/FilterBrand';
+import FilterYear from '../../ui/Filter/FilterYear/FilterYear';
+import FilterBody from '../../ui/Filter/FilterBody/FilterBody';
+import FilterEngine from '../../ui/Filter/FilterEngine/FilterEngine';
+import FilterTransmission from '../../ui/Filter/FilterTransmission/FilterTransmission';
+import FilterDrive from '../../ui/Filter/FilterDrive/FilterDrive';
+import FilterPower from '../../ui/Filter/FilterPower/FilterPower';
+import FilterVolume from '../../ui/Filter/FilterVolume/FilterVolume';
+import FilterMileage from '../../ui/Filter/FilterMileage/FilterMileage';
+import FilterColor from '../../ui/Filter/FilterColor/FilterColor';
+import FilterPrice from '../../ui/Filter/FilterPrice/FilterPrice';
 
 const Filter: FunctionComponent = (): JSX.Element => {
-  const [brands, setBrands] = useState<string[]>([]);
-
-  const onBrandChange = (values: string[]) => {
-    setBrands(values);
-  };
-
-  useUpdateEffect(() => {
-    console.log(brands);
-  }, [brands]);
-
   return (
     <aside className={classes.filter}>
       <div className={classes.header}>
@@ -27,36 +27,53 @@ const Filter: FunctionComponent = (): JSX.Element => {
 
       <div>
         <FilterItem name="Марка">
-          <MultiSelectCheckboxes
-            options={[
-              { label: 'Subaru', value: '1' },
-              { label: 'BMW', value: '2' },
-            ]}
-            values={brands}
-            onChange={onBrandChange}
-          />
+          <FilterBrand />
         </FilterItem>
 
-        <FilterItem name="Год выпуска" />
+        <FilterItem name="Год выпуска">
+          <FilterYear />
+        </FilterItem>
 
-        <FilterItem name="Кузов" />
+        <FilterItem name="Кузов">
+          <FilterBody />
+        </FilterItem>
 
-        <FilterItem name="Двигатель" />
+        <FilterItem name="Двигатель">
+          <FilterEngine />
+        </FilterItem>
 
-        <FilterItem name="Коробка" />
+        <FilterItem name="Коробка">
+          <FilterTransmission />
+        </FilterItem>
 
-        <FilterItem name="Привод" />
+        <FilterItem name="Привод">
+          <FilterDrive />
+        </FilterItem>
 
-        <FilterItem name="Мощность" />
+        <FilterItem name="Мощность">
+          <FilterPower />
+        </FilterItem>
 
-        <FilterItem name="Объем" />
+        <FilterItem name="Объем">
+          <FilterVolume />
+        </FilterItem>
 
-        <FilterItem name="Пробег" />
+        <FilterItem name="Пробег">
+          <FilterMileage />
+        </FilterItem>
 
-        <FilterItem name="Цвет" />
+        <FilterItem name="Цвет">
+          <FilterColor />
+        </FilterItem>
 
-        <FilterItem name="Цена" />
+        <FilterItem name="Цена">
+          <FilterPrice />
+        </FilterItem>
       </div>
+
+      <Button type={'primary'} className={classes.apply}>
+        Применить
+      </Button>
     </aside>
   );
 };
