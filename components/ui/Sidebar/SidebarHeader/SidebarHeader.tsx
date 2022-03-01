@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Image from 'next/image';
 
 import classes from './SidebarHeader.module.scss';
-import logo from '../../../public/logo.svg';
+import logo from '../../../../public/logo.svg';
 
 const SidebarHeader: FunctionComponent = (): JSX.Element => {
   return (
