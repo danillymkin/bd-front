@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import classes from './CarsListItem.module.scss';
 import logo from '../../../public/subaru.png';
@@ -9,6 +10,7 @@ import CarSpecificationsLine from '../CarSpecificationsLine/CarSpecificationsLin
 import CarPrice from '../CarPrice/CarPrice';
 import { Car } from '../../../services/car/models/car';
 import { mileageFormatter } from '../../../helpers/mileageFormatter';
+import { CARS_ROUTE, MANUFACTURERS_ROUTE } from '../../../constants/routes';
 
 interface CarsListItemProps {
   car: Car;
@@ -17,7 +19,7 @@ interface CarsListItemProps {
 type Props = CarsListItemProps;
 
 const CarsListItem: FunctionComponent<Props> = ({ car }): JSX.Element => {
-  const { name, price, color, drive, mileage, transmission, manufacturer } =
+  const { id, name, price, color, drive, mileage, transmission, manufacturer } =
     car;
   const specifications: string[] = [
     `${mileageFormatter.format(mileage)} км`,
@@ -28,20 +30,26 @@ const CarsListItem: FunctionComponent<Props> = ({ car }): JSX.Element => {
 
   return (
     <div className={classes.car}>
-      <div className={classes.image}>
-        <Image src={carImg} layout="responsive" alt="car" />
-      </div>
+      <Link href={`${CARS_ROUTE}/${id}`}>
+        <a className={classes.image}>
+          <Image src={carImg} layout="responsive" alt="car" />
+        </a>
+      </Link>
 
       <div className={classes.details}>
-        <h3 className={classes.name}>{name}</h3>
+        <Link href={`${CARS_ROUTE}/${id}`}>
+          <a className={classes.name}>{name}</a>
+        </Link>
 
         <div className={classes.specifications}>
           <CarSpecificationsLine specifications={specifications} />
         </div>
 
-        <div className={classes.manufacturer}>
-          <CarManufacturer logo={logo} name={manufacturer.name} />
-        </div>
+        <Link href={`${MANUFACTURERS_ROUTE}/${manufacturer.id}`}>
+          <a className={classes.manufacturer}>
+            <CarManufacturer logo={logo} name={manufacturer.name} />
+          </a>
+        </Link>
 
         <div className={classes.price}>
           <CarPrice price={price} />
