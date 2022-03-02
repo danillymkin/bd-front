@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import MultiSelectCheckboxes from '../../../widgets/MultiSelectCheckboxes/MultiSelectCheckboxes';
+import MultiSelectCheckboxes from '../../MultiSelectCheckboxes/MultiSelectCheckboxes';
 
 const FilterBody: FunctionComponent = (): JSX.Element => {
   const [body, setBody] = useState<string[]>([]);

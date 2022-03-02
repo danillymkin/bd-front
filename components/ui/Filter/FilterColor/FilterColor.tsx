@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import MultiSelectCheckboxes from '../../../widgets/MultiSelectCheckboxes/MultiSelectCheckboxes';
+import MultiSelectCheckboxes from '../../MultiSelectCheckboxes/MultiSelectCheckboxes';
 
 const FilterColor: FunctionComponent = (): JSX.Element => {
   const [color, setColor] = useState<string[]>([]);

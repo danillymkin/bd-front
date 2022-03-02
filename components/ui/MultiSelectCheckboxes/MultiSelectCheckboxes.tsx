@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import FilterCheck from '../../ui/FilterCheck/FilterCheck';
+import FilterCheck from '../FilterCheck/FilterCheck';
 
 interface MultiSelectCheckboxesProps {
   options: Array<{ label: string; value: string }>;
