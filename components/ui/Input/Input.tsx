@@ -7,6 +7,7 @@ import React, {
 import { useUpdateEffect } from 'usehooks-ts';
 
 import classes from './Input.module.scss';
+import classNames from 'classnames/bind';
 
 interface InputProps {
   type: HTMLInputTypeAttribute;
@@ -15,9 +16,12 @@ interface InputProps {
   min?: number;
   max?: number;
   placeholder?: string;
+  className?: string;
 }
 
 type Props = InputProps;
+
+const cx = classNames.bind(classes);
 
 const Input: FunctionComponent<Props> = ({
   type,
@@ -26,6 +30,7 @@ const Input: FunctionComponent<Props> = ({
   min,
   max,
   placeholder,
+  className = '',
 }): JSX.Element => {
   const [inputValue, setInputValue] = useState(value);
 
@@ -37,6 +42,11 @@ const Input: FunctionComponent<Props> = ({
     onChange(inputValue);
   }, [inputValue]);
 
+  const inputClasses = cx({
+    input: true,
+    [className]: className,
+  });
+
   return (
     <input
       type={type}
@@ -45,7 +55,7 @@ const Input: FunctionComponent<Props> = ({
       max={max}
       placeholder={placeholder}
       onChange={onInputChange}
-      className={classes.input}
+      className={inputClasses}
     />
   );
 };
