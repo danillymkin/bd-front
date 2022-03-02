@@ -6,6 +6,7 @@ import CarsList from '../../widgets/CarsList/CarsList';
 import Pagination from '../../widgets/Pagination/Pagination';
 import { Car } from '../../../services/car/models/car';
 import Filter from '../../widgets/Filter/Filter';
+import Search from '../../widgets/Search/Search';
 
 interface CarsScreenProps {
   cars: Car[];
@@ -20,6 +21,10 @@ const CarsScreen: FunctionComponent<Props> = ({
 }): JSX.Element => {
   return (
     <DashboardLayout pageTitle="Автомобили">
+      <div className={classes.search}>
+        <Search />
+      </div>
+
       <div className={classes.layout}>
         <div className={classes.content}>
           <CarsList cars={cars} />
