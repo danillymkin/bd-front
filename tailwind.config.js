@@ -19,7 +19,11 @@ module.exports = {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      dropShadow: {
+        '1xl': '0 3px 4px rgba(153, 155, 168, 0.15)',
+      },
+    },
   },
   plugins: [],
 };
