@@ -1,5 +1,5 @@
 export type ServerError = {
   statusCode: number;
-  message: string;
+  messages: string[];
   error: string;
 };
