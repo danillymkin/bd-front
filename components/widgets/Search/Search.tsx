@@ -22,6 +22,7 @@ const Search: FunctionComponent = (): JSX.Element => {
         value={searchValue}
         onChange={onChange}
         className={classes.input}
+        placeholder="Например, Toyota Camry"
       />
     </div>
   );
