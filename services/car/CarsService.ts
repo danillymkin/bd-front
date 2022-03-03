@@ -13,7 +13,9 @@ export default class CarsService {
     return await $api.get<AllAndCount<Car> | ServerError>(CARS_PATH);
   }
 
-  static async getById(id: string | number): Promise<AxiosResponse<Car>> {
+  static async getById(
+    id: string | number,
+  ): Promise<AxiosResponse<Car | ServerError>> {
     return await $api.get<Car>(`${CARS_PATH}/${id}`);
   }
 }
