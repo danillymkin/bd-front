@@ -11,10 +11,10 @@ const Cars: FunctionComponent = (): JSX.Element => {
   return <CarsScreen cars={cars} totalCars={totalCars} />;
 };
 
-export default Cars;
-
 export const getServerSideProps: GetServerSideProps =
   wrapper.getServerSideProps((store) => async () => {
     await store.dispatch(fetchAllCars());
     return { props: {} };
   });
+
+export default Cars;
