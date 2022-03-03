@@ -23,6 +23,9 @@ module.exports = {
       dropShadow: {
         '1xl': '0 3px 4px rgba(153, 155, 168, 0.15)',
       },
+      borderRadius: {
+        '1xl': '0.625rem',
+      },
     },
   },
   plugins: [],
