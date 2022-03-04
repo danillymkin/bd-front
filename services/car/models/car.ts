@@ -1,11 +1,10 @@
 import { Manufacturer } from '../../manufacturer/models/manufacturer';
-
-// TODO: Убрать StaticImageData
+import { Photo } from '../../photo/models/photo';
 
 export interface Car {
   id: number;
   name: string;
-  image: string | StaticImageData;
+  images: Photo[];
   price: number;
   description?: string;
   releaseYear: number;
