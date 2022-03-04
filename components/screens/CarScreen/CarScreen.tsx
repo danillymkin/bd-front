@@ -15,7 +15,7 @@ const CarScreen: FunctionComponent<Props> = ({ car }): JSX.Element => {
   return (
     <DashboardLayout pageTitle={car.name}>
       <div className={classes.content}>
-        <CarPhotos />
+        <CarPhotos photos={car.images} />
       </div>
     </DashboardLayout>
   );
