@@ -3,7 +3,15 @@
 }
 
 .slide {
-  @apply rounded-2xl overflow-hidden select-none
+  @apply overflow-hidden select-none w-full
+}
+
+.imageWrapper {
+  @apply px-1 pt-1 rounded-2xl
+}
+
+.image {
+  @apply rounded-2xl
 }
 
 .control {

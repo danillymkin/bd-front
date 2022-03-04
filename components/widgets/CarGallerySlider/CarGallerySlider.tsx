@@ -6,9 +6,11 @@ import { Navigation, Pagination, EffectCreative } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import classes from './CarGallerySlider.module.scss';
-import slide from '../../../public/slide4.jpg';
+import { Photo } from '../../../services/photo/models/photo';
+import { STATIC_URL } from '../../../http';
 
 interface CarGallerySliderProps {
+  photos: Photo[];
   paginationRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -17,6 +19,7 @@ type Props = CarGallerySliderProps;
 const cx = classNames.bind(classes);
 
 const CarGallerySlider: FunctionComponent<Props> = ({
+  photos,
   paginationRef,
 }): JSX.Element => {
   const nextRef = useRef<HTMLButtonElement>(null);
@@ -75,15 +78,20 @@ const CarGallerySlider: FunctionComponent<Props> = ({
         slidesPerView={1}
         centeredSlides={true}
       >
-        <SwiperSlide className={classes.slide}>
-          <Image src={slide} alt={'Slide'} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={slide} alt={'Slide'} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={slide} alt={'Slide'} />
-        </SwiperSlide>
+        {photos.map((photo: Photo) => (
+          <SwiperSlide key={photo.id} className={classes.slide}>
+            <div className={classes.imageWrapper}>
+              <Image
+                src={`${STATIC_URL}/${photo.fileName}`}
+                alt={'Фото'}
+                objectFit={'cover'}
+                width={1152}
+                height={660}
+                className={classes.image}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <button

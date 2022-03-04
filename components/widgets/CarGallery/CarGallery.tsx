@@ -4,8 +4,10 @@ import classes from './CarGallery.module.scss';
 import CarGallerySlider from '../CarGallerySlider/CarGallerySlider';
 import CarGalleryHeader from '../CarGalleryHeader/CarGalleryHeader';
 import Modal from '../../ui/Modal/Modal';
+import { Photo } from '../../../services/photo/models/photo';
 
 interface CarGalleryProps {
+  photos: Photo[];
   visible: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -13,6 +15,7 @@ interface CarGalleryProps {
 type Props = CarGalleryProps;
 
 const CarGallery: FunctionComponent<Props> = ({
+  photos,
   visible,
   setVisible,
 }): JSX.Element => {
@@ -32,7 +35,7 @@ const CarGallery: FunctionComponent<Props> = ({
           />
 
           <div className={classes.slider}>
-            <CarGallerySlider paginationRef={paginationRef} />
+            <CarGallerySlider photos={photos} paginationRef={paginationRef} />
           </div>
         </div>
       </Modal>
