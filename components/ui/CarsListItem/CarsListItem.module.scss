@@ -3,7 +3,7 @@
 }
 
 .image {
-  @apply rounded-lg overflow-hidden w-full h-full max-h-40 max-w-[205px] cursor-pointer
+  @apply relative rounded-lg overflow-hidden w-full h-full max-h-40 max-w-[205px] cursor-pointer
 }
 
 .details {
