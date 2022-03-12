@@ -26,6 +26,9 @@ module.exports = {
       borderRadius: {
         '1xl': '0.625rem',
       },
+      fontSize: {
+        '1xl': '1.375rem',
+      },
     },
   },
   plugins: [],
