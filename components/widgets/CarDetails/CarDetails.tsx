@@ -5,6 +5,7 @@ import { Car } from '../../../services/car/models/car';
 import { priceFormatter } from '../../../helpers/priceFormatter';
 import CarManufacturer from '../../ui/CarManufacturer/CarManufacturer';
 import { STATIC_URL } from '../../../http';
+import CarSpecifications from '../CarSpecifications/CarSpecifications';
 
 interface CarDetailsProps {
   car: Car;
@@ -33,6 +34,8 @@ const CarDetails: FunctionComponent<Props> = ({ car }): JSX.Element => {
           has standard all-wheel drive and an eight-speed automatic
           transmission.
         </p>
+
+        <CarSpecifications car={car} />
       </section>
 
       <aside className={classes.aside}>
