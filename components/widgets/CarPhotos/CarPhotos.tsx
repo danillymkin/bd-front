@@ -16,15 +16,17 @@ interface CarPhotosProps {
 
 type Props = CarPhotosProps;
 
-const CarPhotos: FunctionComponent<Props> = ({ photos }): JSX.Element => {
+const CarPhotos: FunctionComponent<Props> = ({
+  photos,
+}): JSX.Element | null => {
   const [galleryVisible, setGalleryVisible] = useState(false);
 
   const onClickShowAll = () => {
     setGalleryVisible(true);
   };
 
-  if (!photos) {
-    return <></>;
+  if (!photos.length) {
+    return null;
   }
 
   return (
