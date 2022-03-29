@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import Link from 'next/link';
 
 import classes from './CarDetails.module.scss';
 import { Car } from '../../../services/car/models/car';
@@ -6,6 +7,7 @@ import { priceFormatter } from '../../../helpers/priceFormatter';
 import CarManufacturer from '../../ui/CarManufacturer/CarManufacturer';
 import { STATIC_URL } from '../../../http';
 import CarSpecifications from '../CarSpecifications/CarSpecifications';
+import { MANUFACTURERS_ROUTE } from '../../../constants/routes';
 
 interface CarDetailsProps {
   car: Car;
@@ -14,7 +16,6 @@ interface CarDetailsProps {
 type Props = CarDetailsProps;
 
 const CarDetails: FunctionComponent<Props> = ({ car }): JSX.Element => {
-  console.log(car);
   return (
     <div className={classes.layout}>
       <section className={classes.content}>
@@ -47,10 +48,14 @@ const CarDetails: FunctionComponent<Props> = ({ car }): JSX.Element => {
               Производитель
             </span>
 
-            <CarManufacturer
-              logo={`${STATIC_URL}/${car.manufacturer.logo}`}
-              name={car.manufacturer.name}
-            />
+            <Link href={`${MANUFACTURERS_ROUTE}/${car.manufacturer.id}`}>
+              <a>
+                <CarManufacturer
+                  logo={`${STATIC_URL}/${car.manufacturer.logo}`}
+                  name={car.manufacturer.name}
+                />
+              </a>
+            </Link>
           </div>
         </span>
       </aside>
