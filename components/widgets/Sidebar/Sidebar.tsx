@@ -1,11 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import {
-  FaCar,
-  FaIndustry,
-  FaFileAlt,
-  FaHandshake,
-  FaHome,
-} from 'react-icons/fa';
+import { FaCar, FaFileAlt, FaHandshake, FaHome } from 'react-icons/fa';
 
 import classes from './Sidebar.module.scss';
 import { SidebarMenuType } from '../../ui/Sidebar/SidebarMenu/SidebarMenuType';
@@ -15,7 +9,6 @@ import {
   CARS_ROUTE,
   CONTRACT_ROUTE,
   MAIN_ROUTE,
-  MANUFACTURERS_ROUTE,
   REPORTS_ROUTE,
 } from '../../../constants/routes';
 
@@ -33,11 +26,6 @@ const Sidebar: FunctionComponent = (): JSX.Element => {
           name: 'Автомобили',
           to: CARS_ROUTE,
           icon: <FaCar size={22} />,
-        },
-        {
-          name: 'Производители',
-          to: MANUFACTURERS_ROUTE,
-          icon: <FaIndustry size={22} />,
         },
       ],
     },
