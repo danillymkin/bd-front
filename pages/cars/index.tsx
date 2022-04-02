@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import CarsScreen from '../../components/screens/CarsScreen/CarsScreen';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { wrapper } from '../../store';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { fetchAllCars } from '../../store/cars/carsSlice';
 
-const Cars: FunctionComponent = (): JSX.Element => {
+const Cars: NextPage = (): JSX.Element => {
   const { cars, totalCars } = useTypedSelector((state) => state.cars);
 
   return <CarsScreen cars={cars} totalCars={totalCars} />;
