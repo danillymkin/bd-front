@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 
 import classes from './FilterPrice.module.scss';
 import Input from '../../Input/Input';
@@ -7,12 +7,12 @@ const FilterPrice: FunctionComponent = (): JSX.Element => {
   const [priceFrom, setPriceFrom] = useState<string>('');
   const [priceTo, setPriceTo] = useState<string>('');
 
-  const onChangePriceFrom = (value: string): void => {
-    setPriceFrom(value);
+  const onChangePriceFrom = (event: ChangeEvent<HTMLInputElement>): void => {
+    setPriceFrom(event.target.value);
   };
 
-  const onChangePriceTo = (value: string): void => {
-    setPriceTo(value);
+  const onChangePriceTo = (event: ChangeEvent<HTMLInputElement>): void => {
+    setPriceTo(event.target.value);
   };
 
   return (

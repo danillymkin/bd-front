@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 
 import classes from './FilterPower.module.scss';
 import Input from '../../Input/Input';
@@ -7,12 +7,12 @@ const FilterPower: FunctionComponent = (): JSX.Element => {
   const [powerFrom, setPowerFrom] = useState<string>('');
   const [powerTo, setPowerTo] = useState<string>('');
 
-  const onChangePowerFrom = (value: string): void => {
-    setPowerFrom(value);
+  const onChangePowerFrom = (event: ChangeEvent<HTMLInputElement>): void => {
+    setPowerFrom(event.target.value);
   };
 
-  const onChangePowerTo = (value: string): void => {
-    setPowerTo(value);
+  const onChangePowerTo = (event: ChangeEvent<HTMLInputElement>): void => {
+    setPowerTo(event.target.value);
   };
 
   return (

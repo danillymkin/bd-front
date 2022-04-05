@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 
 import classes from './SignInForm.module.scss';
-import NewInput from '../../ui/NewInput/NewInput';
+import Input from '../../ui/Input/Input';
 import Button from '../../ui/Button/Button';
 
 const SignInForm: FunctionComponent = (): JSX.Element => {
@@ -27,7 +27,7 @@ const SignInForm: FunctionComponent = (): JSX.Element => {
 
   return (
     <form className={classes.form}>
-      <NewInput
+      <Input
         value={email}
         onChange={onChangeEmail}
         size={'xl'}
@@ -36,7 +36,7 @@ const SignInForm: FunctionComponent = (): JSX.Element => {
         label={'E-Mail'}
       />
 
-      <NewInput
+      <Input
         value={password}
         type={'password'}
         onChange={onChangePassword}

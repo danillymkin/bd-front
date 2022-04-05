@@ -1,3 +1,27 @@
 .input {
-  @apply text-sm border border-gray-light rounded-md select-none outline-none px-2 py-1.5
+  @apply border border-gray-light rounded-md select-none outline-none
+}
+
+.medium {
+  @apply text-sm px-2 py-1.5
+}
+
+.extraLarge {
+  @apply py-4 px-5
+}
+
+.widthFull {
+  @apply w-full
+}
+
+.withLabel {
+  @apply pt-8
+}
+
+.label {
+  @apply absolute text-sm text-gray-black top-2.5 left-5 pl-px
+}
+
+.wrap {
+  @apply relative
 }
