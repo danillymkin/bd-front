@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 import classes from './FilterVolume.module.scss';
 import Input from '../../Input/Input';
@@ -7,12 +7,12 @@ const FilterVolume: FunctionComponent = (): JSX.Element => {
   const [volumeFrom, setVolumeFrom] = useState<string>('');
   const [volumeTo, setVolumeTo] = useState<string>('');
 
-  const onChangeVolumeFrom = (event: ChangeEvent<HTMLInputElement>): void => {
-    setVolumeFrom(event.target.value);
+  const onChangeVolumeFrom = (value: string): void => {
+    setVolumeFrom(value);
   };
 
-  const onChangeVolumeTo = (event: ChangeEvent<HTMLInputElement>): void => {
-    setVolumeTo(event.target.value);
+  const onChangeVolumeTo = (value: string): void => {
+    setVolumeTo(value);
   };
 
   return (
@@ -20,6 +20,7 @@ const FilterVolume: FunctionComponent = (): JSX.Element => {
       <Input
         value={volumeFrom}
         type={'number'}
+        width={'full'}
         onChange={onChangeVolumeFrom}
         min={0}
         placeholder="Объем, от"
@@ -28,6 +29,7 @@ const FilterVolume: FunctionComponent = (): JSX.Element => {
       <Input
         value={volumeTo}
         type={'number'}
+        width={'full'}
         onChange={onChangeVolumeTo}
         min={0}
         placeholder="Объем, до"

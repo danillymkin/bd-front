@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 import classes from './FilterPrice.module.scss';
 import Input from '../../Input/Input';
@@ -7,12 +7,12 @@ const FilterPrice: FunctionComponent = (): JSX.Element => {
   const [priceFrom, setPriceFrom] = useState<string>('');
   const [priceTo, setPriceTo] = useState<string>('');
 
-  const onChangePriceFrom = (event: ChangeEvent<HTMLInputElement>): void => {
-    setPriceFrom(event.target.value);
+  const onChangePriceFrom = (value: string): void => {
+    setPriceFrom(value);
   };
 
-  const onChangePriceTo = (event: ChangeEvent<HTMLInputElement>): void => {
-    setPriceTo(event.target.value);
+  const onChangePriceTo = (value: string): void => {
+    setPriceTo(value);
   };
 
   return (
@@ -20,6 +20,7 @@ const FilterPrice: FunctionComponent = (): JSX.Element => {
       <Input
         value={priceFrom}
         type={'number'}
+        width={'full'}
         onChange={onChangePriceFrom}
         min={0}
         placeholder="Цена, от"
@@ -28,6 +29,7 @@ const FilterPrice: FunctionComponent = (): JSX.Element => {
       <Input
         value={priceTo}
         type={'number'}
+        width={'full'}
         onChange={onChangePriceTo}
         min={0}
         placeholder="Цена, до"

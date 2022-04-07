@@ -25,3 +25,11 @@
 .wrap {
   @apply relative
 }
+
+.clear {
+  @apply text-orange absolute right-4 bottom-1/2 translate-y-1/2 cursor-pointer
+}
+
+.icon {
+  @apply absolute right-4 bottom-1/2 translate-y-1/2 text-gray-black
+}

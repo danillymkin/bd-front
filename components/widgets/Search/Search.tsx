@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 import classes from './Search.module.scss';
@@ -7,8 +7,8 @@ import Input from '../../ui/Input/Input';
 const Search: FunctionComponent = (): JSX.Element => {
   const [searchValue, setSearchValue] = useState<string>('');
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    setSearchValue(event.target.value);
+  const onChange = (value: string): void => {
+    setSearchValue(value);
   };
 
   return (

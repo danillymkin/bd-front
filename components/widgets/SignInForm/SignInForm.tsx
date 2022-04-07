@@ -1,9 +1,5 @@
-import React, {
-  ChangeEvent,
-  FormEvent,
-  FunctionComponent,
-  useState,
-} from 'react';
+import React, { FormEvent, FunctionComponent, useState } from 'react';
+import { FaEnvelope } from 'react-icons/fa';
 
 import classes from './SignInForm.module.scss';
 import Input from '../../ui/Input/Input';
@@ -13,12 +9,12 @@ const SignInForm: FunctionComponent = (): JSX.Element => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+  const onChangeEmail = (value: string) => {
+    setEmail(value);
   };
 
-  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
+  const onChangePassword = (value: string) => {
+    setPassword(value);
   };
 
   const login = (event: FormEvent) => {
@@ -34,6 +30,7 @@ const SignInForm: FunctionComponent = (): JSX.Element => {
         width={'full'}
         placeholder={'Ваш E-Mail'}
         label={'E-Mail'}
+        icon={<FaEnvelope />}
       />
 
       <Input
@@ -44,6 +41,7 @@ const SignInForm: FunctionComponent = (): JSX.Element => {
         width={'full'}
         placeholder={'Ваш пароль'}
         label={'Пароль'}
+        clearable
       />
 
       <Button
